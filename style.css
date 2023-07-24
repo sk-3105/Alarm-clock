@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    background-color: #333;
+}
+
+.container {
+    margin: 50px auto;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clock-block {
+    margin-bottom: 200px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#add-alarm-button {
+    font-size: 40px;
+    font-weight: bold;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    padding-bottom: 4px;
+}
+
+#alarm-entry-block {
+    display: none;
+}
+
+#alarm-input {
+    font-size: 20px;
+    text-align: center;
+    width: 120px;
+    height: 40px;
+    display: block;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#alarm-set-button,
+#cancel-button {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    width: 55px;
+    height: 40px;
+    display: grid;
+    place-content: center;
+    border: none;
+    border-radius: 10%;
+    margin-top: 5px;
+}
+
+#alarm-set-button {
+    background-color: green;
+}
+
+#cancel-button {
+    background-color: red;
+}
+
+#alarm-set-button:hover,
+#cancel-button:hover {
+    transform: scale(1.1);
+}
+
+#alarm-set-button:active,
+#cancel-button:active {
+    transform: scale(0.95);
+}
+
+#alarm-display {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#delete-alarm-button {
+    height: 40px;
+    width: 120px;
+    border: none;
+}
+
+#alarm-running-block {
+    display: none;
+}
+
+#alarm-running-block p {
+    text-align: center;
+}
+
+#stop-button,
+#snooze-button {
+    width: 60px;
+    height: 30px;
+    border: none;
+}
+
+#snooze-button {
+    margin-top: 5px;
+}

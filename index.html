@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="clock-block">
+            <h1 id="clock-time"></h1>
+            <h1 id="clock-date"></h1>
+        </div>
+
+        <button id="add-alarm-button">+</button>
+
+        <div id="alarm-entry-block">
+            <input type="time" id="alarm-input">
+
+            <div class="buttons-container">
+                <button id="alarm-set-button">&#128504;</button>
+                <button id="cancel-button">&#10005;</button>
+            </div>
+        </div>
+
+        <div id="alarm-display">
+                <p id="alarm-details"></p>
+                <p id="countdown"></p>
+                <button id="delete-alarm-button">Delete Alarm</button>
+        </div>
+
+        <div id="alarm-running-block">
+            <p id="active-indicator">Alarm Active.</p>
+            <button id="stop-button">stop</button>
+            <button id="snooze-button">snooze</button>
+        </div>
+
+    </div>
+
+    <script src="clock.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
