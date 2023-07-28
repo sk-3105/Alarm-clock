@@ -3,6 +3,8 @@ const alarmEntryBlock = document.getElementById('alarm-entry-block');
 const alarmSetButton = document.getElementById('alarm-set-button');
 const cancelButton = document.getElementById('cancel-button');
 const alarmDisplay = document.getElementById('alarm-display');
+const activeIndicator = document.getElementById('active-indicator');
+const countdownDisplay = document.getElementById('countdown');  
 const snoozeButton = document.getElementById('snooze-button');
 let timeoutId = null;
 let intervalId = null;
@@ -45,8 +47,8 @@ alarmSetButton.onclick = function () {
         const hours = Math.floor(timeDifference / (1000 * 60 * 60));
         const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-        const timer = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        document.getElementById('countdown').textContent = `Alarm will start in ${timer}`;
+        const timer = `${hours.toString()}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        countdownDisplay.textContent = `Time Left ${timer}`;
       }
     /*  */
 
@@ -77,7 +79,8 @@ function playAlarm() {
     const alarmAudio = new Audio('./Alarm Clock.mp3');
     alarmAudio.play();
     playCount++;
-    snoozeButton.style.display = 'inline'
+    activeIndicator.textContent = 'Alarm Active';
+    snoozeButton.style.display = 'inline';
 
     alarmAudio.onended = () => {
         if (playCount < 20 && !alarmStopped && !alarmSnoozed) {
@@ -93,6 +96,7 @@ function playAlarm() {
 }
 
 document.getElementById('delete-alarm-button').onclick = function () {
+    countdownDisplay.textContent = 'Time Left 0:00:00'
     alarmDisplay.style.display = 'none';
     alarmButton.style.display = 'block';
     if (timeoutId !== null) {
@@ -106,7 +110,7 @@ document.getElementById('stop-button').onclick = () => {
     clearInterval(intervalId);
 }
 snoozeButton.onclick = function () {
-    document.getElementById('active-indicator').textContent = `Snooze`;
+    activeIndicator.textContent = `Snooze`;
     alarmSnoozed = true;
     snoozeButton.style.display = 'none'
     setTimeout(playAlarm, 5000)

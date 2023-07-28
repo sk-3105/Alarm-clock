@@ -97,9 +97,15 @@ h1 {
 }
 
 #delete-alarm-button {
-    height: 40px;
-    width: 120px;
+    height: 50px;
+    width: 50px;
     border: none;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+#delete-alarm-button img {
+    height: 30px;
 }
 
 #alarm-running-block {
